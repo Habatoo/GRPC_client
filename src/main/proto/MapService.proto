@@ -1,0 +1,15 @@
+syntax = "proto3";
+package com.example.grpc;
+
+message MapRequest {
+    string query = 1;
+}
+
+message MapResponse {
+    string response = 1;
+    map<string, string> code = 2;
+}
+
+service MapService {
+    rpc takeMap(MapRequest) returns (MapResponse);
+}
